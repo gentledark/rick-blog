@@ -145,7 +145,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/30/css%E4%BC%98%E5%85%88%E7%BA%A7/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/10/#%20%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -159,7 +159,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/08/30/css%E4%BC%98%E5%85%88%E7%BA%A7/" class="post-title-link" itemprop="url">css优先级</a>
+            <a href="/2022/05/10/#%20%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/" class="post-title-link" itemprop="url">数组去重</a>
         </h2>
 
         <div class="post-meta">
@@ -169,7 +169,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-08-30 00:00:00" itemprop="dateCreated datePublished" datetime="2021-08-30T00:00:00+00:00">2021-08-30</time>
+              <time title="创建时间：2022-05-10 00:00:00" itemprop="dateCreated datePublished" datetime="2022-05-10T00:00:00+00:00">2022-05-10</time>
             </span>
 
           
@@ -183,28 +183,27 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="css-优先级"><a href="#css-优先级" class="headerlink" title="css 优先级"></a>css 优先级</h3><p>css 规范：<a target="_blank" rel="noopener" href="http://www.ayqy.net/doc/css2-1/cascade.html#specificity">http://www.ayqy.net/doc/css2-1/cascade.html#specificity</a></p>
-<p>需要结合看上面链接的例子：</p>
+          <h1 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//设置数组为如下</span></span><br><span class="line"><span class="keyword">let</span> arr = [</span><br><span class="line">  <span class="number">1</span>,</span><br><span class="line">  <span class="number">1</span>,</span><br><span class="line">  <span class="string">&quot;true&quot;</span>,</span><br><span class="line">  <span class="string">&quot;true&quot;</span>,</span><br><span class="line">  <span class="literal">true</span>,</span><br><span class="line">  <span class="literal">true</span>,</span><br><span class="line">  <span class="number">15</span>,</span><br><span class="line">  <span class="number">15</span>,</span><br><span class="line">  <span class="literal">false</span>,</span><br><span class="line">  <span class="literal">false</span>,</span><br><span class="line">  <span class="literal">undefined</span>,</span><br><span class="line">  <span class="literal">undefined</span>,</span><br><span class="line">  <span class="literal">null</span>,</span><br><span class="line">  <span class="literal">null</span>,</span><br><span class="line">  <span class="title class_">NaN</span>,</span><br><span class="line">  <span class="title class_">NaN</span>,</span><br><span class="line">  <span class="string">&quot;NaN&quot;</span>,</span><br><span class="line">  <span class="number">0</span>,</span><br><span class="line">  <span class="number">0</span>,</span><br><span class="line">  <span class="string">&quot;a&quot;</span>,</span><br><span class="line">  <span class="string">&quot;a&quot;</span>,</span><br><span class="line">  &#123;&#125;,</span><br><span class="line">  &#123;&#125;,</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>如果声明来自一个’style’属性而不是一条选择器样式规则，算 1，否则就是 0 (&#x3D; a)（HTMl 中，一个元素的”style”属性值是样式表规则，这些属性没有选择器，所以 a&#x3D;1，b&#x3D;0，c&#x3D;0，d&#x3D;0）</li>
-<li>计算选择器中 ID 属性的数量 (&#x3D; b)</li>
-<li>计算选择器中其它属性和伪类的数量 (&#x3D; c)</li>
-<li>计算选择器中元素名和伪元素的数量 (&#x3D; d)</li>
+<li>第一种方式：for 循环去重</li>
 </ul>
-<p>通过计算上面命中的规则来判定优先级。</p>
-<h5 id="实际应用中，以下规则更简单："><a href="#实际应用中，以下规则更简单：" class="headerlink" title="实际应用中，以下规则更简单："></a>实际应用中，以下规则更简单：</h5><ol>
-<li>选择器越具体，其优先级越高</li>
-<li>相同优先级，出现在后面的，覆盖前面的</li>
-<li>属性后面加 !important 的优先级最高，但是要少用</li>
-</ol>
-<h5 id="下面的优先级递增："><a href="#下面的优先级递增：" class="headerlink" title="下面的优先级递增："></a>下面的优先级递增：</h5><ol>
-<li>通配符，子类，兄弟选择器 * , &gt;, +</li>
-<li>标签，伪元素类型选择器 h1 span div</li>
-<li>类，伪类，属性选择器 .content .wrapper</li>
-<li>id 选择器 #content</li>
-<li>内联样式 style&#x3D;”color: green “</li>
-</ol>
-<h5 id="选择器优先级高的属性会覆盖低的属性，而同优先级下，后出现的属性会覆盖先出现的"><a href="#选择器优先级高的属性会覆盖低的属性，而同优先级下，后出现的属性会覆盖先出现的" class="headerlink" title="选择器优先级高的属性会覆盖低的属性，而同优先级下，后出现的属性会覆盖先出现的"></a>选择器优先级高的属性会覆盖低的属性，而同优先级下，后出现的属性会覆盖先出现的</h5>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">unique</span>(<span class="params">item</span>) &#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; item.<span class="property">length</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = i + <span class="number">1</span>; j &lt; item.<span class="property">length</span>; j++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (item[i] === item[j]) &#123;</span><br><span class="line">        item.<span class="title function_">splice</span>(j, <span class="number">1</span>);</span><br><span class="line">        j--;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> item;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;这是两重for循环的去重&quot;</span> + [<span class="title function_">unique</span>(arr)]); <span class="comment">//两重for循环的去重</span></span><br></pre></td></tr></table></figure>
+
+<p>使用两层 for 循环，但是结果中有重复的项，NaN 和{}是无法去重的，而且占用内存高，速度慢</p>
+<ul>
+<li>第二种方式：使用 set 去重</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">unique2</span>(<span class="params">item</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> newSet = <span class="keyword">new</span> <span class="title class_">Set</span>(item);</span><br><span class="line">  <span class="keyword">return</span> item;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;这是set去重&quot;</span> + [<span class="title function_">unique2</span>(arr)]); <span class="comment">//set用法的去重</span></span><br></pre></td></tr></table></figure>
+
+<p>此种方法也无法去重 NaN 和{}，但是速度相对较快</p>
+<ul>
+<li>第三种方法：使用 map 去重</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">unique3</span>(<span class="params">arr</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> map = <span class="keyword">new</span> <span class="title class_">Map</span>();</span><br><span class="line">  <span class="keyword">let</span> array = <span class="keyword">new</span> <span class="title class_">Array</span>();</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.<span class="property">length</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (!map.<span class="title function_">has</span>(arr[i])) &#123;</span><br><span class="line">      map.<span class="title function_">set</span>(arr[i], <span class="literal">true</span>);</span><br><span class="line">      array.<span class="title function_">push</span>(arr[i]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> &#123; array, map &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;map去重&quot;</span> + [<span class="title function_">unique3</span>(arr)]);</span><br></pre></td></tr></table></figure>
+
+<p>此种方法无法去重{}但可以去重 NaN，而且由于键数组会一直维持对键对象的引用，所以容易发生内存泄露</p>
+
       
     </div>
 
@@ -223,7 +222,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/10/canvas%E5%92%8Csvg%E5%8C%BA%E5%88%AB/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/11/%E4%BC%AA%E5%85%83%E7%B4%A0%20%E4%BC%AA%E7%B1%BB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -237,7 +236,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/08/10/canvas%E5%92%8Csvg%E5%8C%BA%E5%88%AB/" class="post-title-link" itemprop="url">canvas和svg区别</a>
+            <a href="/2022/04/11/%E4%BC%AA%E5%85%83%E7%B4%A0%20%E4%BC%AA%E7%B1%BB/" class="post-title-link" itemprop="url">伪元素</a>
         </h2>
 
         <div class="post-meta">
@@ -247,7 +246,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-08-10 00:00:00" itemprop="dateCreated datePublished" datetime="2021-08-10T00:00:00+00:00">2021-08-10</time>
+              <time title="创建时间：2022-04-11 00:00:00" itemprop="dateCreated datePublished" datetime="2022-04-11T00:00:00+00:00">2022-04-11</time>
             </span>
 
           
@@ -261,11 +260,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>canvas 和 svg 区别</p>
-<p>canvas 是用笔刷绘制 2d 图形的，svg 是用标签绘制矢量图</p>
-<p>相同点是都是 2d 图形</p>
-<p>不同点是 canvas 是位图，而 svg 是矢量图</p>
-<p>很多节点时 canvas 性能好一些，但是写的比较麻烦</p>
+          <h3 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h3><p>参考文章：<a target="_blank" rel="noopener" href="https://juejin.cn/post/6976646049456717838">https://juejin.cn/post/6976646049456717838</a></p>
+<p>区分：</p>
+<p><strong>1. 伪类表示被选择元素的某种状态，例如<code>:hover</code></strong></p>
+<p><strong>2. 伪元素表示的是被选择元素的某个部分，这个部分看起来像一个独立的元素，但是是”假元素”，只存在于 css 中，所以叫”伪”的元素，例如<code>:before</code>和<code>:after</code></strong></p>
 
       
     </div>
@@ -285,7 +283,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/05/#%20js%E7%BB%A7%E6%89%BF/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/05/#%20Promise/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -299,7 +297,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/08/05/#%20js%E7%BB%A7%E6%89%BF/" class="post-title-link" itemprop="url">js继承</a>
+            <a href="/2022/04/05/#%20Promise/" class="post-title-link" itemprop="url">Promise</a>
         </h2>
 
         <div class="post-meta">
@@ -309,7 +307,76 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-08-05 00:00:00" itemprop="dateCreated datePublished" datetime="2021-08-05T00:00:00+00:00">2021-08-05</time>
+              <time title="创建时间：2022-04-05 00:00:00" itemprop="dateCreated datePublished" datetime="2022-04-05T00:00:00+00:00">2022-04-05</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h1><p>Promise 对象代表了一个异步操作的成功或失败<br>用于当某个操作（eg.加载 xml）完成或者失败后执行相应的操作<br>**如何创建 Promise： **</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//让函数拥有promise功能</span></span><br><span class="line"><span class="comment">//当异步代码执行成功时，我们才会调用resolve(...), 当异步代码失败时就会调用reject(...)</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">myPromise</span>(<span class="params">url</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">//重要！</span></span><br><span class="line">    <span class="keyword">const</span> request = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>();</span><br><span class="line">    request.<span class="title function_">open</span>(<span class="string">&quot;GET&quot;</span>, url);</span><br><span class="line">    request.<span class="property">onreadystatechange</span> = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (request.<span class="property">readyState</span> === <span class="number">4</span> &amp;&amp; request.<span class="property">status</span> === <span class="number">200</span>) &#123;</span><br><span class="line">        resolve.<span class="title function_">call</span>(<span class="literal">null</span>, request.<span class="property">response</span>);</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;success&quot;</span>);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        reject.<span class="title function_">call</span>(<span class="literal">null</span>, request);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    request.<span class="title function_">send</span>();</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">myPromise</span>(www.<span class="property">baidu</span>.<span class="property">com</span>).<span class="title function_">then</span>(<span class="keyword">function</span> (<span class="params">result</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(result);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//创建promise对象</span></span><br><span class="line"><span class="keyword">let</span> myFirstPromise = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="keyword">function</span> (<span class="params">resolve, reject</span>) &#123;</span><br><span class="line">  <span class="comment">//在本例中，我们使用setTimeout(...)来模拟异步代码，实际编码时可能是XHR请求或是HTML5的一些API方法.</span></span><br><span class="line">  <span class="built_in">setTimeout</span>(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="title function_">resolve</span>(<span class="string">&quot;成功!&quot;</span>); <span class="comment">//代码正常执行！</span></span><br><span class="line">  &#125;, <span class="number">250</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">myFirstPromise.<span class="title function_">then</span>(<span class="keyword">function</span> (<span class="params">successMessage</span>) &#123;</span><br><span class="line">  <span class="comment">//successMessage的值是上面调用resolve(...)方法传入的值.</span></span><br><span class="line">  <span class="comment">//successMessage参数不一定非要是字符串类型，这里只是举个例子</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Yay! &quot;</span> + successMessage);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>**Promise.prototype.then **<br>因为 Promise.prototype.then 和 Promise.prototype.catch 方法返回的是 promise， 所以它们可以被链式调用。也就是说每次的 then 返回的都是一个新的 Promise<br>于是我们可以写出以下的代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="keyword">function</span> (<span class="params">resolve, reject</span>) &#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> <span class="title function_">resolve</span>(<span class="number">1</span>), <span class="number">1000</span>); <span class="comment">// (*)</span></span><br><span class="line">&#125;)</span><br><span class="line">  .<span class="title function_">then</span>(<span class="keyword">function</span> (<span class="params">result</span>) &#123;</span><br><span class="line">    <span class="comment">// (**)</span></span><br><span class="line"></span><br><span class="line">    <span class="title function_">alert</span>(result); <span class="comment">// 1</span></span><br><span class="line">    <span class="keyword">return</span> result * <span class="number">2</span>;</span><br><span class="line">  &#125;)</span><br><span class="line">  .<span class="title function_">then</span>(<span class="keyword">function</span> (<span class="params">result</span>) &#123;</span><br><span class="line">    <span class="comment">// (***)</span></span><br><span class="line"></span><br><span class="line">    <span class="title function_">alert</span>(result); <span class="comment">// 2</span></span><br><span class="line">    <span class="keyword">return</span> result * <span class="number">2</span>;</span><br><span class="line">  &#125;)</span><br><span class="line">  .<span class="title function_">then</span>(<span class="keyword">function</span> (<span class="params">result</span>) &#123;</span><br><span class="line">    <span class="title function_">alert</span>(result); <span class="comment">// 4</span></span><br><span class="line">    <span class="keyword">throw</span> <span class="string">&#x27;error&#x27;</span></span><br><span class="line">    <span class="keyword">return</span> result * <span class="number">2</span>;</span><br><span class="line">  &#125;).<span class="title function_">catch</span>(<span class="keyword">function</span>(<span class="params"><span class="number">3</span></span>)&#123;</span><br><span class="line">  	<span class="variable language_">console</span>.<span class="title function_">log</span>(e)<span class="comment">//‘error’</span></span><br><span class="line">  	&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>上述所有操作都是按顺序进行的，只有当上一个异步操作完成之后才会进行下一步，并且异步操作的结果是每一步更新的</p>
+<p>**Promise.all() **<br>Promise.all() 方法接收一个 promise 的 iterable 类型（注：Array，Map，Set 都属于 ES6 的 iterable 类型）的输入，并且只返回一个 Promise 实例， 那个输入的所有 promise 的 resolve 回调的结果是一个数组。这个 Promise 的 resolve 回调执行是在所有输入的 promise 的 resolve 回调都结束，或者输入的 iterable 里没有 promise 了的时候。它的 reject 回调执行是，只要任何一个输入的 promise 的 reject 回调执行或者输入不合法的 promise 就会立即抛出错误，并且 reject 的是第一个抛出的错误信息。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> promise1 = <span class="title class_">Promise</span>.<span class="title function_">resolve</span>(<span class="number">3</span>);</span><br><span class="line"><span class="keyword">const</span> promise2 = <span class="number">42</span>;</span><br><span class="line"><span class="keyword">const</span> promise3 = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(resolve, <span class="number">100</span>, <span class="string">&quot;foo&quot;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="title class_">Promise</span>.<span class="title function_">all</span>([promise1, promise2, promise3]).<span class="title function_">then</span>(<span class="function">(<span class="params">values</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(values);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 输出: Array [3, 42, &quot;foo&quot;]</span></span><br></pre></td></tr></table></figure>
+
+<p>**promise.race() **<br>Promise.race(iterable) 方法返回一个 promise，一旦迭代器中的某个 promise 解决或拒绝，返回的 promise 就会解决或拒绝。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> p3 = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="keyword">function</span> (<span class="params">resolve, reject</span>) &#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(resolve, <span class="number">100</span>, <span class="string">&quot;three&quot;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">let</span> p4 = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="keyword">function</span> (<span class="params">resolve, reject</span>) &#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(reject, <span class="number">500</span>, <span class="string">&quot;four&quot;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="title class_">Promise</span>.<span class="title function_">race</span>([p3, p4]).<span class="title function_">then</span>(</span><br><span class="line">  <span class="keyword">function</span> (<span class="params">value</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(value); <span class="comment">// &quot;three&quot;</span></span><br><span class="line">    <span class="comment">// p3 更快，所以它完成了</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="keyword">function</span> (<span class="params">reason</span>) &#123;</span><br><span class="line">    <span class="comment">// 未被调用</span></span><br><span class="line">  &#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/10/#%20js%E7%BB%A7%E6%89%BF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Rick Yao">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rick's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/03/10/#%20js%E7%BB%A7%E6%89%BF/" class="post-title-link" itemprop="url">js继承</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-03-10 00:00:00" itemprop="dateCreated datePublished" datetime="2022-03-10T00:00:00+00:00">2022-03-10</time>
             </span>
 
           
@@ -354,7 +421,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/05/##%20%E9%97%AD%E5%8C%85/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/01/##%20%E9%97%AD%E5%8C%85/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -368,7 +435,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/08/05/##%20%E9%97%AD%E5%8C%85/" class="post-title-link" itemprop="url">闭包</a>
+            <a href="/2022/03/01/##%20%E9%97%AD%E5%8C%85/" class="post-title-link" itemprop="url">闭包</a>
         </h2>
 
         <div class="post-meta">
@@ -378,7 +445,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-08-05 00:00:00" itemprop="dateCreated datePublished" datetime="2021-08-05T00:00:00+00:00">2021-08-05</time>
+              <time title="创建时间：2022-03-01 00:00:00" itemprop="dateCreated datePublished" datetime="2022-03-01T00:00:00+00:00">2022-03-01</time>
             </span>
 
           
@@ -433,7 +500,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/20/#%20%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/02/20/#%20%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -447,7 +514,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/07/20/#%20%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/" class="post-title-link" itemprop="url">DOM事件模型和事件委托</a>
+            <a href="/2022/02/20/#%20%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/" class="post-title-link" itemprop="url">DOM事件模型和事件委托</a>
         </h2>
 
         <div class="post-meta">
@@ -457,7 +524,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-07-20 00:00:00" itemprop="dateCreated datePublished" datetime="2021-07-20T00:00:00+00:00">2021-07-20</time>
+              <time title="创建时间：2022-02-20 00:00:00" itemprop="dateCreated datePublished" datetime="2022-02-20T00:00:00+00:00">2022-02-20</time>
             </span>
 
           
@@ -509,7 +576,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/20/BFC%20%E6%98%AF%E4%BB%80%E4%B9%88/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/22/HTML%E5%85%A5%E9%97%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -523,7 +590,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/07/20/BFC%20%E6%98%AF%E4%BB%80%E4%B9%88/" class="post-title-link" itemprop="url">BFC 是什么?</a>
+            <a href="/2022/01/22/HTML%E5%85%A5%E9%97%A8/" class="post-title-link" itemprop="url">HTML入门</a>
         </h2>
 
         <div class="post-meta">
@@ -533,7 +600,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-07-20 00:00:00" itemprop="dateCreated datePublished" datetime="2021-07-20T00:00:00+00:00">2021-07-20</time>
+              <time title="创建时间：2022-01-22 00:00:00" itemprop="dateCreated datePublished" datetime="2022-01-22T00:00:00+00:00">2022-01-22</time>
             </span>
 
           
@@ -547,40 +614,58 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h4 id="BFC-是什么"><a href="#BFC-是什么" class="headerlink" title="BFC 是什么?"></a>BFC 是什么?</h4><p>BFC 是 block formatting context，块级格式化上下文</p>
-<p>主要作用就是用来创建一个<strong>不会被外界影响</strong>的 css 区域</p>
-<h5 id="如何创建一个-BFC？"><a href="#如何创建一个-BFC？" class="headerlink" title="如何创建一个 BFC？"></a>如何创建一个 BFC？</h5><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Block_formatting_context">https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Block_formatting_context</a></p>
-<p>所有的触发方式如上，常用如下列表：</p>
-<ol>
-<li>float 不是 none 的</li>
-<li>position 为 fixed 或者 absolute 的</li>
-<li>inline-block 元素，行内块元素</li>
-<li>overflow 不是 visible 的元素</li>
-<li>display 为 flex 或者 inline-flex 的直接子元素</li>
-</ol>
-<h5 id="解决的问题-x2F-常用方法："><a href="#解决的问题-x2F-常用方法：" class="headerlink" title="解决的问题&#x2F;常用方法："></a>解决的问题&#x2F;常用方法：</h5><p>由于创建了一个<strong>不会被影响</strong>的区域，所以可以实现以下效果</p>
-<ol>
-<li><p>清除浮动（clearfix 也可以清除浮动）</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: red;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box1</span> &#123;</span><br><span class="line">  <span class="attribute">float</span>: left; <span class="comment">/*由于box1 float了，所以container的高度会塌陷*/</span></span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: blue;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box2</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">400px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">background</span>: cyan;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">overflow</span>: auto; <span class="comment">/*对container触发bfc，上面的塌陷就会消除*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>防止 margin 合并</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;div1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;div2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.div1</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: green;</span><br><span class="line">  <span class="attribute">margin-bottom</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*这个时候由于外边距重叠，那么上下的距离是20px*/</span></span><br><span class="line"><span class="selector-class">.div2</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: red;</span><br><span class="line">  <span class="attribute">margin-top</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;wrapper&quot;</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 通过创建一个wrapper，再对wrapper创建bfc即可分离margin--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;div1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;div2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.wrapper</span> &#123;</span><br><span class="line">  <span class="comment">/* 开启BFC */</span></span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.div1</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: green;</span><br><span class="line">  <span class="attribute">margin-bottom</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.div2</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: red;</span><br><span class="line">  <span class="attribute">margin-top</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>制作两栏布局</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;left&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;right&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.left</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: green;</span><br><span class="line">  <span class="attribute">float</span>: left;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*BFC的区域不会与浮动的元素区域重叠，所以right是自适应的，left是左侧固定宽度*/</span></span><br><span class="line"><span class="selector-class">.right</span> &#123;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: red;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden; <span class="comment">/* 创建BFC */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
+          <h1 id="HTML-入门"><a href="#HTML-入门" class="headerlink" title="HTML 入门"></a><strong>HTML 入门</strong></h1><p><strong>核心</strong></p>
+<ul>
+<li>域名知识</li>
+<li>http 知识</li>
+<li>html 知识</li>
+<li>其他</li>
+</ul>
+<p>互联网就是互联网，指基于 ip 的网络</p>
+<p>万维网是指 www 的网</p>
+<p>html 由 Tim Berners-Lee 发明的</p>
+<p>html 排错</p>
+<ul>
+<li>html 代码验证器，可以搜索 w3c 验证器安装命令行工具</li>
+<li>vscode 颜色提示</li>
+<li>webstorm 的提示</li>
+</ul>
+<p>如果遇到不会的，直接 Google MDN + 关键词</p>
+<h2 id="章节标签"><a href="#章节标签" class="headerlink" title="章节标签"></a>章节标签</h2><p>标题： h1~h6 ， 默认黑体，表示标题</p>
+<p>章节： section ， 表示章节</p>
+<p>文章： article ？？？</p>
+<p>段落： p 表示章节里的内容</p>
+<p>头部： header ， 表示文章结构的头部</p>
+<p>脚部: footer， 表示文章的末尾部分</p>
+<p>主要内容： main, 表示主体</p>
+<p>旁支： aside ， 表示非主体内容</p>
+<p>划分： div 划分网页内容</p>
+<h2 id="全局属性-所有标签都有的属性"><a href="#全局属性-所有标签都有的属性" class="headerlink" title="全局属性: 所有标签都有的属性"></a>全局属性: 所有标签都有的属性</h2><p>class ： 用来表示样式的</p>
+<p>contenteditable： 可以使得内容可编辑</p>
+<p>hidden： 使内容不显示</p>
+<p>id： 与 class 类似， 不过不建议使用， 使用时需要注意保留字</p>
+<p>style: 样式</p>
+<p>tabindex： 表示当前内容的 tab 值，用来用 tab 键位操作</p>
+<p>1-n，数字越小优先级越低</p>
+<p>0，优先级最低</p>
+<p>-1，表示 tab 不会索引到这里</p>
+<p>title：表示鼠标摸上去的时候，黄色背景的内容</p>
+<h2 id="默认样式"><a href="#默认样式" class="headerlink" title="默认样式"></a>默认样式</h2><p>elements→ style→ user agent stylesheet</p>
+<p>最开始写的时候，需要把默认样式去掉，然后写的是时候自己加样式</p>
+<h2 id="内容标签"><a href="#内容标签" class="headerlink" title="内容标签"></a>内容标签</h2><p>ol+ li ： ordered list ， listitem</p>
+<p>有顺序的 list，用“1. 2.”这种表示，只能放在内容只能放在 li 里</p>
+<p>ul+li ： unordered list</p>
+<p>和上面一样，但是没有数字标识</p>
+<p>dl+dt+dd ： dt 为 term， dd 为 description， 描述这个 item</p>
+<p>pre：保留空格回车 tab 等，包起来即可</p>
+<p>code： code 里的内容默认等宽的，可以使用 pre+code 写代码</p>
+<p>hr：分割线</p>
+<p>br：换行 - break</p>
+<p>a：一般是超链接用</p>
+<p>em：强调， emphasis ， 默认样式是斜体，语气的强调</p>
+<p>strong：强调，本质的强调</p>
+<p>quote：行内引用</p>
+<p>blockquote：换行的引用</p>
 
       
     </div>
@@ -600,7 +685,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/10/#%20%E5%B8%B8%E8%A7%81HTTP%E7%8A%B6%E6%80%81%E7%A0%81/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/20/#%20%E5%B8%B8%E8%A7%81HTTP%E7%8A%B6%E6%80%81%E7%A0%81/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -614,7 +699,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/07/10/#%20%E5%B8%B8%E8%A7%81HTTP%E7%8A%B6%E6%80%81%E7%A0%81/" class="post-title-link" itemprop="url">常见HTTP状态码</a>
+            <a href="/2022/01/20/#%20%E5%B8%B8%E8%A7%81HTTP%E7%8A%B6%E6%80%81%E7%A0%81/" class="post-title-link" itemprop="url">常见HTTP状态码</a>
         </h2>
 
         <div class="post-meta">
@@ -624,7 +709,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-07-10 00:00:00" itemprop="dateCreated datePublished" datetime="2021-07-10T00:00:00+00:00">2021-07-10</time>
+              <time title="创建时间：2022-01-20 00:00:00" itemprop="dateCreated datePublished" datetime="2022-01-20T00:00:00+00:00">2022-01-20</time>
             </span>
 
           
@@ -728,115 +813,6 @@
 <td align="center">HTTP Version not supported 服务器不支持请求的 HTTP 协议的版本，无法完成处理</td>
 </tr>
 </tbody></table>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/20/HTML%E5%85%A5%E9%97%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Rick Yao">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Rick's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/06/20/HTML%E5%85%A5%E9%97%A8/" class="post-title-link" itemprop="url">HTML入门</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-06-20 00:00:00" itemprop="dateCreated datePublished" datetime="2021-06-20T00:00:00+00:00">2021-06-20</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="HTML-入门"><a href="#HTML-入门" class="headerlink" title="HTML 入门"></a><strong>HTML 入门</strong></h1><p><strong>核心</strong></p>
-<ul>
-<li>域名知识</li>
-<li>http 知识</li>
-<li>html 知识</li>
-<li>其他</li>
-</ul>
-<p>互联网就是互联网，指基于 ip 的网络</p>
-<p>万维网是指 www 的网</p>
-<p>html 由 Tim Berners-Lee 发明的</p>
-<p>html 排错</p>
-<ul>
-<li>html 代码验证器，可以搜索 w3c 验证器安装命令行工具</li>
-<li>vscode 颜色提示</li>
-<li>webstorm 的提示</li>
-</ul>
-<p>如果遇到不会的，直接 Google MDN + 关键词</p>
-<h2 id="章节标签"><a href="#章节标签" class="headerlink" title="章节标签"></a>章节标签</h2><p>标题： h1~h6 ， 默认黑体，表示标题</p>
-<p>章节： section ， 表示章节</p>
-<p>文章： article ？？？</p>
-<p>段落： p 表示章节里的内容</p>
-<p>头部： header ， 表示文章结构的头部</p>
-<p>脚部: footer， 表示文章的末尾部分</p>
-<p>主要内容： main, 表示主体</p>
-<p>旁支： aside ， 表示非主体内容</p>
-<p>划分： div 划分网页内容</p>
-<h2 id="全局属性-所有标签都有的属性"><a href="#全局属性-所有标签都有的属性" class="headerlink" title="全局属性: 所有标签都有的属性"></a>全局属性: 所有标签都有的属性</h2><p>class ： 用来表示样式的</p>
-<p>contenteditable： 可以使得内容可编辑</p>
-<p>hidden： 使内容不显示</p>
-<p>id： 与 class 类似， 不过不建议使用， 使用时需要注意保留字</p>
-<p>style: 样式</p>
-<p>tabindex： 表示当前内容的 tab 值，用来用 tab 键位操作</p>
-<p>1-n，数字越小优先级越低</p>
-<p>0，优先级最低</p>
-<p>-1，表示 tab 不会索引到这里</p>
-<p>title：表示鼠标摸上去的时候，黄色背景的内容</p>
-<h2 id="默认样式"><a href="#默认样式" class="headerlink" title="默认样式"></a>默认样式</h2><p>elements→ style→ user agent stylesheet</p>
-<p>最开始写的时候，需要把默认样式去掉，然后写的是时候自己加样式</p>
-<h2 id="内容标签"><a href="#内容标签" class="headerlink" title="内容标签"></a>内容标签</h2><p>ol+ li ： ordered list ， listitem</p>
-<p>有顺序的 list，用“1. 2.”这种表示，只能放在内容只能放在 li 里</p>
-<p>ul+li ： unordered list</p>
-<p>和上面一样，但是没有数字标识</p>
-<p>dl+dt+dd ： dt 为 term， dd 为 description， 描述这个 item</p>
-<p>pre：保留空格回车 tab 等，包起来即可</p>
-<p>code： code 里的内容默认等宽的，可以使用 pre+code 写代码</p>
-<p>hr：分割线</p>
-<p>br：换行 - break</p>
-<p>a：一般是超链接用</p>
-<p>em：强调， emphasis ， 默认样式是斜体，语气的强调</p>
-<p>strong：强调，本质的强调</p>
-<p>quote：行内引用</p>
-<p>blockquote：换行的引用</p>
 
       
     </div>
