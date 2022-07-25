@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: Rick's Blog
 subtitle: ''
 description: ''
 keywords:
-author: John Doe
-language: en
+author: Rick Yao
+language: zh-CN 
 timezone: ''
 
 # URL
@@ -97,9 +97,11 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git
+  repo: git@github.com:gentledark/rick-blog.git
+  branch: master
